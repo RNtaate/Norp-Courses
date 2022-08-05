@@ -1,24 +1,3 @@
-# README
+# Norp Courses
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> ### **NOTE:** I had to reduce the version of bootstrap from **5.2.0** to **5.1.2** so as to be able to properly deploy to heroku.
