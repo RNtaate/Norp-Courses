@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'font-awesome-sass', '~> 6.1', '>= 6.1.2'
 gem 'simple_form', '~> 5.1'
+gem 'faker', '~> 2.22'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
