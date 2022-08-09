@@ -15,17 +15,70 @@
   </div>
 </div>
 
+<div class="card-group mt-4">
+  <div class="card">  
+    <div class="card-body">
+      <h2 class="card-title">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </h2>
+      <small class="card-text">
+        <%= @courses.length %>
+        online courses
+      </small>
+      <p class="card-text"><small>Explore a variety of fresh topics</small></p>
+    </div>
+  </div>
+
+  <div class="card">  
+    <div class="card-body">
+      <h2 class="card-title">
+        <i class="fa-solid fa-chalkboard-user"></i>
+      </h2>
+      <small class="card-text">
+        <%= @courses.distinct.count(:user_id) %>
+        expert instructors
+      </small>
+      <p class="card-text"><small>Find the right instructor for you</small></p>
+    </div>
+  </div>
+
+  <div class="card">  
+    <div class="card-body">
+      <h2 class="card-title">
+        <i class="fa-solid fa-user-graduate"></i>
+      </h2>
+      <small class="card-text">
+        <%= User.count %>
+        active learners
+      </small>
+      <p class="card-text"><small>Join the knowledge sharing community</small></p>
+    </div>
+  </div>
+
+  <div class="card">  
+    <div class="card-body">
+      <h2 class="card-title">
+        <i class="fa-solid fa-infinity"></i>
+      </h2>
+      <small class="card-text">
+        Life time access
+      </small>
+      <p class="card-text"><small>Learn on your schedule</small></p>
+    </div>
+  </div>
+</div>
+
 <hr>
 <h2>Popular Courses</h2>
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @courses.each do |course| %>
+  <% @courses.limit(3).each do |course| %>
       <%= render 'courses/course', course: course %>
   <% end %>
 </div>
 <hr>
 <h2>Most Rated Courses</h2>
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @courses.each do |course| %>
+  <% @courses.limit(3).each do |course| %>
       <%= render 'courses/course', course: course %>
   <% end %>
 </div>
