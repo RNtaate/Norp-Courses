@@ -15,10 +15,17 @@
               Home
             <% end %>
           </li>
+
           <li class="nav-item">
             <%= link_to courses_path, class: "nav-link #{"active fw-bolder" if current_page?(courses_path)}" do %>
               <i class="fa-solid fa-book"></i>
               Courses
+            <% end %>
+
+            <li class="nav-item">
+            <%= link_to new_course_path, class: "nav-link #{"active fw-bolder" if current_page?(new_course_path)}" do %>
+              <i class="fa-solid fa-plus"></i>
+              New Course
             <% end %>
           </li>
         </ul>
