@@ -3,7 +3,11 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all.includes(:user).order('created_at DESC')
+    if params[:title]
+      @courses = Course.where('title ILIKE ?', "%#{params[:title]}%")
+    else
+      @courses = Course.all.includes(:user).order('created_at DESC')
+    end
   end
 
   # GET /courses/1 or /courses/1.json
