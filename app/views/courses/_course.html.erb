@@ -1,0 +1,28 @@
+<div class="col">
+  <div class="card h-100">
+    <div class="card-header">
+      <i class="fa-solid fa-book"></i>
+      <%= link_to course.title, course_path(course) %>
+    </div>
+    <div class="card-body text-secondary">
+      <small class="card-desc">
+        <%= course.description %>
+      </small>
+    </div>
+    <div class="card-footer">
+      <small class="card-text d-block my-0">
+        <i class="fa-regular fa-clock"></i>
+        <%= course.created_at.strftime('%d-%b-%Y') %>
+      </small>
+      <small class="card-text d-block my-0 mt-1">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <%= course.user.email %>
+      </small>
+    </div>
+    <div class="card-footer">
+      <%= link_to 'Show', course, class: "btn btn-sm btn-primary" %>
+      <%= link_to 'Edit', edit_course_path(course), class: "btn btn-warning btn-sm" %>
+      <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+    </div>
+  </div>
+</div>
