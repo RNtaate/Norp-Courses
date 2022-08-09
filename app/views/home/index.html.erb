@@ -1,10 +1,38 @@
-<h1>Norp Courses</h1>
-<p>An application about creating and taking courses by teachers and students.</p>
-<small>
-  Built by Roy Ntaate using Ruby on Rails.
-</small>
+<div class="bg-light p-5 rounded-3">
+  <div class="container-fluid py-5">
+    <p class="display-4">What do you want to learn today?</p>
 
-<%= link_to courses_path, class: "btn btn-success text-light" do %>
-  <i class="fa-solid fa-book"></i>
-  Courses
-<% end %>
+    <div class="d-inline-block pt-4">
+      <%= form_with url: courses_path, method: :get do %>
+        <div class="input-group">
+          <input class="form-control py-0 rounded-0" name="title" autocomplete="off" type="search" placeholder="Search by title" aria-label="Search">
+          <button class="btn btn-primary btn-sm rounded-0 text-light" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>  
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>
+<h2>Popular Courses</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @courses.each do |course| %>
+      <%= render 'courses/course', course: course %>
+  <% end %>
+</div>
+<hr>
+<h2>Most Rated Courses</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @courses.each do |course| %>
+      <%= render 'courses/course', course: course %>
+  <% end %>
+</div>
+<hr>
+<h2>Latest Courses</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @latest_courses.each do |course| %>
+      <%= render 'courses/course', course: course %>
+  <% end %>
+</div>
