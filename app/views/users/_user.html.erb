@@ -1,0 +1,35 @@
+<div class="col">
+  <div class="card h-100">
+    <div class="card-header">
+      <h5 class="display-6 fs-4">
+        <%= user.email %>
+      </h5>
+    </div>
+
+    <div class="card-footer">
+      Signed up <%= time_ago_in_words(user.created_at) %> ago
+    </div>
+
+    <div class="card-footer ps-3">
+      <small class="row ps-3 py-1">
+        <%= "sign_in_count".humanize %> <%= user.sign_in_count%>
+      </small>
+
+      <small class="row ps-3 py-1">
+        <%= "current_sign_in_at".humanize %> <%= user.current_sign_in_at %>
+      </small>
+
+      <small class="row ps-3 py-1">
+        <%= "last_sign_in_at".humanize %> <%= user.last_sign_in_at %>
+      </small>
+
+      <small class="row ps-3 py-1">
+        <%= "current_sign_in_ip".humanize %> <%= user.current_sign_in_ip %>
+      </small>
+
+      <small class="row ps-3 py-1">
+        <%= "last_sign_in_ip".humanize %> <%= user.last_sign_in_ip %>
+      </small>
+    </div>
+  </div>
+</div>
