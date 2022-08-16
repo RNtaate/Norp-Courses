@@ -31,6 +31,7 @@ gem 'font-awesome-sass', '~> 6.1', '>= 6.1.2'
 gem 'simple_form', '~> 5.1'
 gem 'faker', '~> 2.22'
 gem 'devise', '~> 4.8', '>= 4.8.1'
+gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
