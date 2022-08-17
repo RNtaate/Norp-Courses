@@ -12,3 +12,8 @@ a {
 .course-navbar {
   font-size: 12px;
 }
+
+.form-control.is-invalid,
+.form-control.is-valid {
+  background-image: none;
+}

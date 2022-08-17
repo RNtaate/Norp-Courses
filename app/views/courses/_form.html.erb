@@ -7,9 +7,19 @@
       <%= f.input :title, input_html: {autocomplete: "off"} %>
       <%= f.label :description, class: "mt-3" %>
       <%= f.rich_text_area :description %>
+      <small class="text-danger">
+        <%= f.error :description, class: "text-danger"%>
+      </small>
+      <%= f.input :short_description, label_html: {class: "mt-3"}, input_html: {autocomplete: "off"}%>
+
+      <%= f.input :language, collection: ["English", "Spanish", "French"], label_html: {class: "mt-3"}, input_html: {autocomplete: "off"} %>
+
+      <%= f.input :level, collection: ["Beginner", "Intermediate", "Advanced"], label_html: {class: "mt-3"}, input_html: {autocomplete: "off"} %>
+
+      <%= f.input :price, type: "number", label_html: {class: "mt-3"}%>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions mt-3">
       <%= f.button :submit %>
     </div>
   </div>
