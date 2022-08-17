@@ -9,6 +9,21 @@
         <%= course.description %>
       </small>
     </div>
+
+    <div class="card-footer">
+      <small class="card-text my-0 fw-bold">
+        <i class="fa-solid fa-earth-africa"></i>
+        <%= course.language %>
+      </small>
+      <small class="card-text my-0 fw-bold mx-3">
+        <i class="fa-solid fa-signal"></i>
+        <%= course.level %>
+      </small>
+      <small class="card-text my-0 fw-bold">
+        <%= number_to_currency(course.price) %>
+      </small>
+    </div>
+
     <div class="card-footer">
       <small class="card-text d-block my-0">
         <i class="fa-regular fa-clock"></i>
