@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable, :confirmable
   
   has_many :courses
+
+  def username
+    if self.email.present?
+        self.email.split("@").first   
+    end
+  end
 end
