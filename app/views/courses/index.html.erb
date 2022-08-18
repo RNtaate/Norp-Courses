@@ -1,7 +1,30 @@
 <h1 class="display-6">Courses: <%= @courses.count %></h1>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <% @courses.each do |course| %>
-      <%= render 'courses/course', course: course %>
-  <% end %>
-</div>
+<section class="courses-wrapper row">
+
+  <aside class="col-md-2 p-0">
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :title_cont, placeholder: "title", autocomplete: "off", class: "form-control form-control-sm mb-2" %>
+      <%= f.search_field :short_description_cont, placeholder: "short description", autocomplete: "off", class: "form-control form-control-sm mb-2" %>
+
+      <%= f.select(:language_cont, Course.languages, {include_blank: "Course Language"}, { class: 'form-select form-select-sm mb-2' }) %>
+
+      <%= f.select(:level_cont, Course.levels, {include_blank: "Course Level"}, {class: "form-select form-select-sm mb-2"})%>
+
+      <%= f.search_field :price_eq, placeholder: "price", autocomplete: "off", class: "form-control form-control-sm mb-2" %>
+      <%= f.search_field :user_email_cont, placeholder: "teacher", autocomplete: "off", class: "form-control form-control-sm mb-2" %>
+
+      <%= f.submit %>
+    <% end %>
+
+    <%= link_to courses_path do %>
+      <i class="fa-solid fa-arrows-rotate mt-3 bg-secondary p-2 rounded text-light"></i>
+    <% end %>
+  </aside>
+
+  <div class="row row-cols-1 row-cols-md-3 col-md-10">
+    <% @courses.each do |course| %>
+        <%= render 'courses/course', course: course %>
+    <% end %>
+  </div>
+</section>
