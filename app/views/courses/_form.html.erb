@@ -12,9 +12,9 @@
       </small>
       <%= f.input :short_description, label_html: {class: "mt-3"}, input_html: {autocomplete: "off"}%>
 
-      <%= f.input :language, collection: ["English", "Spanish", "French"], label_html: {class: "mt-3"}, input_html: {autocomplete: "off"} %>
+      <%= f.input :language, collection: Course.languages, label_html: {class: "mt-3"}, input_html: {autocomplete: "off"} %>
 
-      <%= f.input :level, collection: ["Beginner", "Intermediate", "Advanced"], label_html: {class: "mt-3"}, input_html: {autocomplete: "off"} %>
+      <%= f.input :level, collection: Course.levels, label_html: {class: "mt-3"}, input_html: {autocomplete: "off"} %>
 
       <%= f.input :price, type: "number", label_html: {class: "mt-3"}%>
     </div>
