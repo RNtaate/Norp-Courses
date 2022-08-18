@@ -8,9 +8,8 @@ class CoursesController < ApplicationController
     # else
     #   @courses = Course.all.includes(:user).order('created_at DESC')
     # end
-
-    @q = Course.ransack(params[:q]);
-    @courses = @q.result.includes(:user).order(created_at: :desc)
+    
+    @courses = @ransack_courses.result.includes(:user).order(created_at: :desc)
   end
 
   # GET /courses/1 or /courses/1.json
