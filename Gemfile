@@ -33,6 +33,7 @@ gem 'faker', '~> 2.22'
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'friendly_id', '~> 5.4', '>= 5.4.2'
 gem 'ransack', '~> 3.2', '>= 3.2.1'
+gem 'public_activity'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
