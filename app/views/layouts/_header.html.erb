@@ -35,6 +35,13 @@
                 Users
               <% end %>
             </li>
+
+            <li class="nav-item">
+              <%= link_to home_activity_path, class: "nav-link #{"active fw-bolder" if current_page?(home_activity_path)}" do %>
+                <i class="fa-solid fa-bell"></i>
+                Activity
+              <% end %>
+            </li>
         </ul>
 
         <ul class="navbar-nav mb-2 mb-lg-0">
