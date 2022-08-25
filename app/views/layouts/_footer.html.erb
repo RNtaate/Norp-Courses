@@ -1,0 +1,20 @@
+<footer class="bg-dark text-light">
+  <div class="container py-3">
+    <div class="row">
+      <section class="col-md-4 py-0">
+        <p class="m-0 py-1">Copyright &copy; <%= Time.now.year %> Norp Industries</p>
+        <p class="m-0 py-1"><i class="fa-solid fa-envelope"></i> <%= mail_to "royhyde14@gmail.com"%></p>
+      </section>
+
+      <section class="col-md-4 py-0">
+        <p class="m-0 py-1">Privacy Policy</p>
+        <p class="m-0 py-1">Terms and Conditions</p>
+      </section>
+
+      <section class="col-md-4 py-0">
+        <p class="m-0 py-1">About Us</p>
+        <%= link_to "Teach on Norp", new_course_path %>
+      </section>
+    </div> 
+  </div>
+</footer>

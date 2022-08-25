@@ -9,8 +9,13 @@ a {
   text-decoration: none;
 }
 
-.course-navbar {
+.course-navbar,
+footer {
   font-size: 12px;
+}
+
+.course-navbar {
+  z-index: 1000;
 }
 
 .form-control.is-invalid,
