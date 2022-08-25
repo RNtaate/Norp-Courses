@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm course-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow position-sticky top-0 course-navbar">
   <div class="container-fluid">
     <%= link_to "NorpCourses", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,6 @@
                 Users
               <% end %>
             </li>
-
-            <li class="nav-item">
-              <%= link_to home_activity_path, class: "nav-link #{"active fw-bolder" if current_page?(home_activity_path)}" do %>
-                <i class="fa-solid fa-bell"></i>
-                Activity
-              <% end %>
-            </li>
         </ul>
 
         <ul class="navbar-nav mb-2 mb-lg-0">
@@ -58,10 +51,10 @@
             <% end %>          
           </li>
 
-          <li class="nav-item font-weight-bold">
-            <%= link_to root_path, class: "nav-link" do %>
-              <i class="fa-solid fa-house-chimney"></i>
-              Another Link
+          <li class="nav-item">
+            <%= link_to home_activity_path, class: "nav-link #{"active fw-bolder" if current_page?(home_activity_path)}" do %>
+              <i class="fa-solid fa-bell"></i>
+              Activity
             <% end %>
           </li>
 
