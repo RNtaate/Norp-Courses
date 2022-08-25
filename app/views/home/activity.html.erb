@@ -1,0 +1,9 @@
+<h1>Activity</h1>
+
+<% @activities.each do |activity|%>
+  <br>
+  <%= activity.id %>
+  <%= activity.trackable_type %>
+  <%= activity.key %>
+  <%= activity.owner.email if activity.owner %>
+<% end %>
