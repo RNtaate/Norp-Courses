@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow position-sticky top-0 course-navbar">
+  <div class="container-fluid">
+    <%= link_to "NorpCourses", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <% if user_signed_in? %>
+        <ul class="navbar-nav mb-2 mb-lg-0 me-auto">
+          <li class="nav-item">
+            <%= link_to root_path, class: "nav-link #{"active fw-bolder" if current_page?(root_path)}" do %>
+              <i class="fa-solid fa-house-chimney"></i>
+              Home
+            <% end %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to courses_path, class: "nav-link #{"active fw-bolder" if current_page?(courses_path)}" do %>
+              <i class="fa-solid fa-graduation-cap"></i>
+              Courses
+            <% end %>
+
+            <li class="nav-item">
+              <%= link_to new_course_path, class: "nav-link #{"active fw-bolder" if current_page?(new_course_path)}" do %>
+                <i class="fa-solid fa-plus"></i>
+                New Course
+              <% end %>
+            </li>
+
+            <li class="nav-item">
+              <%= link_to users_path, class: "nav-link #{"active fw-bolder" if current_page?(users_path)}" do %>
+                <i class="fa-solid fa-users"></i>
+                Users
+              <% end %>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+
+          <li class="nav-item d-flex align-items-center me-3">
+            <%= search_form_for @ransack_courses, as: :courses_search, url: courses_path do |f| %>
+              <div class="d-flex bg-info">
+                <%= f.search_field :title_cont, placeholder: "Find a course", autocomplete: "off", class: "form-control form-control-sm rounded-0" %>
+
+                <%= f.button type: "submit", class: "btn-sm btn-primary border-0 rounded-0" do %>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                <% end %>
+              </div>
+            <% end %>          
+          </li>
+
+          <li class="nav-item">
+            <%= link_to home_activity_path, class: "nav-link #{"active fw-bolder" if current_page?(home_activity_path)}" do %>
+              <i class="fa-solid fa-bell"></i>
+              Activity
+            <% end %>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+              <%= current_user.email %>
+            </a>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+                <i class="fa-solid fa-gear"></i>
+                Account Settings
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do%>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sign Out
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+          <li class="nav-item">
+            <%= link_to new_user_registration_path, class: "nav-link #{"active fw-bolder" if current_page?(new_user_registration_path)}" do %>
+              <i class="fa-solid fa-user-plus"></i>
+              Sign Up
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_user_session_path, class: "nav-link #{"active fw-bolder" if current_page?(new_user_session_path)}" do %>
+              <i class="fa-solid fa-right-to-bracket"></i>
+              Login
+            <% end %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,10 @@
+<%= link_to courses_path do  %>
+  <small>Courses</small>
+<% end %> /
+<%= link_to course_path(@course) do  %>
+  <small><%= @course.title %></small>
+<% end %>
+<p></p>
+
+<%= render 'courses/course', course: @course %>
+
