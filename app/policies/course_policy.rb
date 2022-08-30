@@ -15,14 +15,17 @@ class CoursePolicy < ApplicationPolicy
   end
 
   def edit?
-    @user.has_role?:admin or @record.user == @user
+    return (@user.has_role?:admin or @record.user == @user) if @user
+    false
   end
 
   def update?
-    @user.has_role?:admin or @record.user == @user
+    return (@user.has_role?:admin or @record.user == @user) if @user
+    false
   end
 
   def destroy?
-    @user.has_role?:admin or @record.user == @user
+    return (@user.has_role?:admin or @record.user == @user) if @user
+    false
   end
 end
