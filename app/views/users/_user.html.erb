@@ -40,5 +40,13 @@
         <span class="badge bg-danger">No</span>
       <% end %>
     </div>
+
+    <div class="card-footer">
+      <small>Status: </small>
+      <% user.roles.each do |role|%>
+        <small class="badge bg-info"><%= role.name %></small>
+      <% end %>
+      <%= link_to "Edit Roles", edit_user_path(user), class: "btn btn-sm bg-warning" if policy(user).edit? %>
+    </div>
   </div>
 </div>
