@@ -7,7 +7,11 @@
   <div class="card-body">
     <%= simple_form_for @user do |f|%>
       <%= f.collection_check_boxes :role_ids, Role.all, :id, :name%>
-      <%= f.error :roles, class: "text-danger" %>
+      <br>
+      <% if @user.errors.any? %>
+        <hr>
+        <%= f.error :roles, class: "text-danger" %>
+      <% end %>
       <%= f.button :submit, class: "btn btn-sm btn-success mt-3"%>
     <% end %>
   </div>
