@@ -1,9 +1,12 @@
 <div class="col">
   <div class="card h-100">
     <div class="card-header">
-      <h5 class="display-6 fs-4">
-        <%= user.email %>
-      </h5>
+      <%= link_to user_path(user) do %>
+        <h6 class="display-6 fs-4">
+          <i class="fa-solid fa-user text-dark"></i>
+          <%= user.email %>
+        </h6>
+      <% end %>
     </div>
 
     <div class="card-footer">
