@@ -27,6 +27,9 @@ class User < ApplicationRecord
     end
   end
 
+  extend FriendlyId
+  friendly_id :email, use: :slugged
+
   validate :must_have_a_role, on: :update
 
   private
