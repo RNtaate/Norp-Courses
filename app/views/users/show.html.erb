@@ -1,3 +1,9 @@
-<h3>
-  <%= @user.email %>
-</h3>
+<%= link_to users_path do  %>
+  <small>Users</small>
+<% end %> /
+<%= link_to user_path(@user) do  %>
+  <small><%= @user.email %></small>
+<% end %>
+<p></p>
+
+<%= render "users/user", user: @user %>

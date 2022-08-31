@@ -3,6 +3,7 @@
     <div class="card-header">
       <%= link_to user_path(user) do %>
         <h6 class="display-6 fs-4">
+          <i class="fa-solid fa-circle <%= user.online? ? "text-success" : "text-danger" %>"></i>
           <i class="fa-solid fa-user text-dark"></i>
           <%= user.email %>
         </h6>
