@@ -1,3 +1,14 @@
+<%= link_to courses_path do  %>
+  <small>Courses</small>
+<% end %> /
+<%= link_to course_path(@course) do  %>
+  <small><%= @course.title %></small>
+<% end %>/
+<%= link_to course_lesson_path(@course, @lesson) do %>
+  <small><%= @lesson.title %></small>
+<% end %>
+<p></p>
+
 <%= render "lessons/lesson", course: @course, lesson: @lesson %>
 
 <%= link_to 'Back to course', course_path(@course), class: "btn btn-sm btn-success mt-3" %>
