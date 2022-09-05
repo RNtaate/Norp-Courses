@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: %i[ show edit update destroy ]
-  before_action :set_course, only: %i[index new create show edit update]
+  before_action :set_course, only: %i[index new create show edit update destroy]
 
   # GET /lessons or /lessons.json
   def index
@@ -59,7 +59,7 @@ class LessonsController < ApplicationController
     @lesson.destroy
 
     respond_to do |format|
-      format.html { redirect_to course_lessons_url, notice: "Lesson was successfully destroyed." }
+      format.html { redirect_to course_url(@course), notice: "Lesson was successfully destroyed." }
       format.json { head :no_content }
     end
   end
