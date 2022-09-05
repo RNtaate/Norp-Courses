@@ -3,6 +3,8 @@ class Lesson < ApplicationRecord
 
   validates :title, :content, :course, presence: true
 
+  has_rich_text :content
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
