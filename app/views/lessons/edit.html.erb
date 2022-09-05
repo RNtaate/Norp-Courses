@@ -1,5 +1,17 @@
-<h1>Editing Lesson</h1>
+<div class="card">
+  <div class="card-header">
+    <h2>Editing Lesson</h2>
+    <small>
+      <b>Course: </b>
+      <%= @course.title %>
+    </small>
+  </div>
 
-<%= render 'form', course: @course, lesson: @lesson %>
+  <div class="card-body">
+    <%= render 'form', course: @course, lesson: @lesson %>
+  </div>
 
-<%= link_to 'Cancel', course_lesson_path(@course, @lesson), class: "btn btn-sm btn-danger mt-3" %>
+  <div class="card-footer">
+    <%= link_to 'Cancel', course_lesson_path(@course, @lesson), class: "btn btn-sm btn-danger mt-3" %>
+  </div>
+</div>

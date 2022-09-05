@@ -1,5 +1,18 @@
-<h1>New Lesson</h1>
+<div class="card">
+  <div class="card-header">
+    <h2>New Lesson</h2>
+    <small>
+      <b>Course: </b>
+      <%= @course.title %>
+    </small>
+  </div>
 
-<%= render 'form', course: @course, lesson: @lesson %>
+  <div class="card-body">
+    <%= render 'form', course: @course, lesson: @lesson %>
+  </div>
 
-<%= link_to 'Back', course_path(@course) %>
+  <div class="card-footer">
+    <%= link_to 'Cancel', course_path(@course), class: "btn btn-sm btn-danger"  %>
+  </div>
+</div>
+
