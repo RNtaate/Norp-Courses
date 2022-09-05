@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy ]
+  before_action :set_course, only: %i[ edit update destroy ]
 
   # GET /courses or /courses.json
   def index
@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
 
   # GET /courses/1 or /courses/1.json
   def show
+    @course = Course.includes(:lessons).friendly.find(params[:id])
   end
 
   # GET /courses/new
