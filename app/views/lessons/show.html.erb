@@ -11,4 +11,8 @@
 
 <%= render "lessons/lesson", course: @course, lesson: @lesson %>
 
-<%= link_to 'Back to course', course_path(@course), class: "btn btn-sm btn-success mt-3" %>
+<%= link_to course_path(@course) do %>
+  <small class="d-inline-block mt-3" >
+    Back to Course
+  </small>
+<% end %>
