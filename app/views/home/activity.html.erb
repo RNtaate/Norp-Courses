@@ -5,9 +5,8 @@
 <% @activities.each do |activity|%>
   <br>
   <%= activity.id %>
-  <%= link_to activity.trackable, activity.trackable %>
+  <%= activity.trackable %>
   <%= activity.trackable_type %>
   <%= activity.key %>
-  <%= activity.recipient_type %>
   <%= activity.owner.email if activity.owner %>
 <% end %>
