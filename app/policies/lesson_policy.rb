@@ -14,6 +14,10 @@ class LessonPolicy < ApplicationPolicy
     @user.has_role?(:admin) or @record.course.user_id == @user.id
   end
 
+  def create?
+    @record.course.user_id == @user.id
+  end
+
   def update?
     @record.course.user_id == @user.id
   end

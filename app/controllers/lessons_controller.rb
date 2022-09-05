@@ -28,6 +28,8 @@ class LessonsController < ApplicationController
 
     @lesson = @course.lessons.build(lesson_params);
 
+    authorize @lesson
+
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to course_lesson_url(@course, @lesson), notice: "Lesson was successfully created." }
