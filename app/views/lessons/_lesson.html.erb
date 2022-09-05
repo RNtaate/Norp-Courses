@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+      <i class="fa-solid fa-book"></i>
+      <%= link_to lesson.title, course_lesson_path(course, lesson) %>
+  </div>
+
+  <div class="card-body text-secondary">
+    <small class="card-desc">
+      <%= lesson.content %>
+    </small>
+  </div>
+
+  <div class="card-footer">
+    <small class="card-text d-block my-0">
+      <i class="fa-regular fa-clock"></i>
+      <%= lesson.created_at.strftime('%d-%b-%Y') %>
+    </small>
+    <small class="card-text d-block my-0 mt-1">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <%= course %>
+    </small>
+  </div>
+
+  <div class="card-footer">
+    <%= link_to "Show", course_lesson_path(course, lesson), class: "btn btn-sm btn-primary" %>
+
+    <%= link_to "Edit", edit_course_lesson_path(course, lesson), class: "btn btn-sm btn-warning" %>
+
+    <%= link_to "Destroy", course_lesson_path(course, lesson), method: :delete, data: {confirm: "Are you sure you want to delete this lesson?"}, class: "btn btn-sm btn-danger" %>
+  </div>
+</div>
