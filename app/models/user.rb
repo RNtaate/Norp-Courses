@@ -15,6 +15,10 @@ class User < ApplicationRecord
     end
   end
 
+  def to_s
+    username
+  end
+
   after_create :assign_default_role
 
   def assign_default_role
