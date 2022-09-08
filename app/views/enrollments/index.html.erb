@@ -17,8 +17,8 @@
   <tbody>
     <% @enrollments.each do |enrollment| %>
       <tr>
-        <td><%= enrollment.course_id %></td>
-        <td><%= enrollment.user_id %></td>
+        <td><%= enrollment.course.title %></td>
+        <td><%= enrollment.user.username %></td>
         <td><%= enrollment.rating %></td>
         <td><%= enrollment.review %></td>
         <td><%= enrollment.price %></td>
