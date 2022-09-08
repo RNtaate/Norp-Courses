@@ -1,5 +1,16 @@
-<h1>New Enrollment</h1>
+<div class="card">
+  <div class="card-header">
+    <h3>
+      <i class="fa-solid fa-lock-open"></i>
+      New Enrollment
+    </h3>
+  </div>
 
-<%= render 'form', enrollment: @enrollment %>
+  <div class="card-body">
+    <%= render 'form', enrollment: @enrollment %>
+  </div>
 
-<%= link_to 'Back', enrollments_path %>
+  <div class="card-footer">
+    <%= link_to 'Back', enrollments_path %>
+  </div>
+</div>
