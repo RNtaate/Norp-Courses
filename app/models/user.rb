@@ -7,6 +7,7 @@ class User < ApplicationRecord
   rolify
 
   has_many :courses
+  has_many :enrollments, dependent: :destroy
 
   def username
     if self.email.present?
