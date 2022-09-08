@@ -12,8 +12,10 @@ class Enrollment < ApplicationRecord
   protected
   def can_not_subscribe_to_own_course
     if new_record?
-      if user_id == course.user_id
-        errors.add(:base, "You can not enroll to your own course")
+      if self.user_id.present?
+        if user_id == course.user_id
+          errors.add(:base, "You can not enroll to your own course")
+        end
       end
     end
   end

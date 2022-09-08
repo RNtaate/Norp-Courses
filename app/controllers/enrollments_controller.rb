@@ -22,7 +22,9 @@ class EnrollmentsController < ApplicationController
   # POST /enrollments or /enrollments.json
   def create
     @enrollment = Enrollment.new(enrollment_params)
-    @enrollment.price = @enrollment.course.price
+    if @enrollment.course
+      @enrollment.price = @enrollment.course.price
+    end
 
     respond_to do |format|
       if @enrollment.save
