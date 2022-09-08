@@ -11,7 +11,7 @@ class LessonPolicy < ApplicationPolicy
   end
 
   def show?
-    @user.has_role?(:admin) or @record.course.user_id == @user.id
+    @user.has_role?(:admin) or @record.course.user_id == @user.id or @record.course.bought(@user) == false
   end
 
   def create?
