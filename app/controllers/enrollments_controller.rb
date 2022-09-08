@@ -23,7 +23,7 @@ class EnrollmentsController < ApplicationController
   # POST /enrollments or /enrollments.json
   def create
     if @course.price > 0
-      flash[:alert] = "You cannot enroll to paid coursed yet!"
+      flash[:alert] = "You cannot enroll to priced courses yet!"
       redirect_to course_url(@course)
     else
       @enrollment = current_user.buy_course(@course)
